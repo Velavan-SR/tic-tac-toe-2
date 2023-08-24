@@ -2,7 +2,8 @@ const box = document.getElementsByClassName('box');
 const result = document.getElementById('result');
 const message = document.getElementById('message');
 
-let text = 'O'
+let text = 'O';
+let c=0;
 
 for (let i=0;i<box.length;i++){
     box[i].addEventListener('click',handleClick)
@@ -10,6 +11,7 @@ for (let i=0;i<box.length;i++){
 
 function handleClick(e){
     if (!e.target.innerText){
+    c++;
     text = text=='O'?'X':'O';
     e.target.innerHTML = `<h2>${text}</h2>`
     }
@@ -38,6 +40,10 @@ function checkit(){
     box[2].innerText+box[4].innerText+box[6].innerText=='OOO'){
         
         showResult('O WON');
+    }
+
+    if(c==9){
+        showResult("IT'S A DRAW!")
     }
 }
 
