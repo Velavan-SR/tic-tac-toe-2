@@ -42,7 +42,7 @@ function checkit(){
         showResult('O WON');
     }
 
-    if(c==9){
+    else if(c==9){
         showResult("IT'S A DRAW!")
     }
 }
